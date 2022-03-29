@@ -4,7 +4,7 @@
   - This project aims to develop a mini blogs with spring.
   - supports all plateform,includes Android,Ios,H5
 
-Here are some photos of brief structure of this project:
+Here are some picture of brief structure of this project:
 
 ### **Mobile**
 

@@ -1,6 +1,6 @@
 package cn.rmonkey.entity;
 
-import cn.rmonkey.commons.entity.IdBaseEntity;
+import cn.rmonkey.commons.entity.BaseEntity;
 import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableName;
 import com.fasterxml.jackson.annotation.JsonFormat;
@@ -14,7 +14,7 @@ import java.util.List;
  * @date 2022/3/28 17:01
  */
 @TableName("blog_user")
-public class UserEntity extends IdBaseEntity {
+public class UserEntity extends BaseEntity {
     //用户openid
     private Long openid;
 

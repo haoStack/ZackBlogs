@@ -23,6 +23,10 @@
             <artifactId>service</artifactId>
         </dependency>
         <dependency>
+            <groupId>cn.zack.blogs</groupId>
+            <artifactId>mapper</artifactId>
+        </dependency>
+        <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
             <version>8.0.28</version>

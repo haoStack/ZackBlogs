@@ -1,5 +1,6 @@
 package cn.rmonkey.commons.entity;
 
+import com.baomidou.mybatisplus.annotation.TableId;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -13,7 +14,7 @@ import java.io.Serializable;
 @Getter
 @Setter
 public abstract class BaseEntity implements Serializable {
-
+    @TableId
     protected Integer id;
 
 }

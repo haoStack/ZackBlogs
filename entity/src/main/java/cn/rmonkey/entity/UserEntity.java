@@ -4,6 +4,9 @@ import cn.rmonkey.commons.entity.BaseEntity;
 import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableName;
 import com.fasterxml.jackson.annotation.JsonFormat;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
@@ -16,6 +19,9 @@ import java.util.List;
  * @date 2022/3/28 17:01
  */
 @TableName("blog_user")
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
 public class UserEntity extends BaseEntity {
     //用户openid
     @NotNull

@@ -15,14 +15,46 @@
         <module>service</module>
         <module>mapper</module>
         <module>entity</module>
+        <module>config</module>
+        <module>securitty</module>
     </modules>
 
     <properties>
         <maven.compiler.source>11</maven.compiler.source>
         <maven.compiler.target>11</maven.compiler.target>
         <java.version>1.8</java.version>
-
+        <blogs.version>1.0-SNAPSHOT</blogs.version>
     </properties>
+<!--子模块中引用-->
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>cn.zack.blogs</groupId>
+                <artifactId>commons</artifactId>
+                <version>${blogs.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>cn.zack.blogs</groupId>
+                <artifactId>utils</artifactId>
+                <version>${blogs.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>cn.zack.blogs</groupId>
+                <artifactId>mapper</artifactId>
+                <version>${blogs.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>cn.zack.blogs</groupId>
+                <artifactId>service</artifactId>
+                <version>${blogs.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>cn.zack.blogs</groupId>
+                <artifactId>securitty</artifactId>
+                <version>${blogs.version}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
 
     <dependencies>
         <dependency>
@@ -34,6 +66,27 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-security</artifactId>
             <version>2.6.3</version>
+        </dependency>
+        <dependency>
+            <groupId>com.baomidou</groupId>
+            <artifactId>mybatis-plus-boot-starter</artifactId>
+            <version>3.4.2</version>
+        </dependency>
+        <dependency>
+            <groupId>org.mybatis.spring.boot</groupId>
+            <artifactId>mybatis-spring-boot-starter</artifactId>
+            <version>2.2.2</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
+            <version>2.13.1</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-validation</artifactId>
+            <version>2.6.4</version>
         </dependency>
         <dependency>
             <groupId>org.projectlombok</groupId>

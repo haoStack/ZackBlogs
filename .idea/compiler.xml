@@ -8,10 +8,12 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="controller" />
-        <module name="mapper" />
-        <module name="commons" />
+        <module name="securitty" />
         <module name="utils" />
         <module name="service" />
+        <module name="mapper" />
+        <module name="config" />
+        <module name="commons" />
         <module name="entity" />
       </profile>
     </annotationProcessing>

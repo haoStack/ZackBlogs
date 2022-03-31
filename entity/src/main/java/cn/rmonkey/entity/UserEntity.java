@@ -5,6 +5,8 @@ import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableName;
 import com.fasterxml.jackson.annotation.JsonFormat;
 
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 import java.util.Date;
 import java.util.List;
 
@@ -16,9 +18,11 @@ import java.util.List;
 @TableName("blog_user")
 public class UserEntity extends BaseEntity {
     //用户openid
+    @NotNull
     private Long openid;
 
     //用户昵称
+    @Size(min = 4, max = 20, message = "用户昵称长度")
     private String nickName;
 
     //用户头像地址

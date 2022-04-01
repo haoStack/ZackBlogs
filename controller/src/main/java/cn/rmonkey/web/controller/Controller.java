@@ -1,5 +1,6 @@
 package cn.rmonkey.web.controller;
 
+import cn.rmonkey.entity.ResponseResult;
 import cn.rmonkey.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
@@ -12,10 +13,9 @@ public class Controller {
     @Autowired
     UserService userService;
     @ResponseBody
-    @RequestMapping("/kk0")
+    @RequestMapping("/hello")
     @PreAuthorize("hasAuthority('admin')")
-    public String hello() {
-        System.out.println(userService.userList());
-        return "hello";
+    public ResponseResult hello() {
+        return new ResponseResult(200,"ok",userService.userList());
     }
 }

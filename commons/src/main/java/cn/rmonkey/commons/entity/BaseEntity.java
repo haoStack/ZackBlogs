@@ -15,6 +15,6 @@ import java.io.Serializable;
 @Setter
 public abstract class BaseEntity implements Serializable {
     @TableId
-    protected Integer id;
+    protected Long id;
 
 }

@@ -1,6 +1,5 @@
 package cn.rmonkey.entity;
 
-import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.springframework.security.core.GrantedAuthority;
@@ -13,12 +12,12 @@ import java.util.List;
 
 /**
  * @author Zack
- * @Description
+ * @Description UserDetails 放用户信息
  * @date 2022/4/1 9:47
  */
 @Data
 @NoArgsConstructor
-@AllArgsConstructor
+
 public class LoginUser implements UserDetails {
 
     private UserEntity userEntity;
@@ -33,7 +32,6 @@ public class LoginUser implements UserDetails {
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
-
 
         List<GrantedAuthority> newList = new ArrayList<>();
         //将permissions中 String类型权限信息封装成 GrantedAuthorit实现类

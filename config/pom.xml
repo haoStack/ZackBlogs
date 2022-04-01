@@ -21,6 +21,11 @@
             <groupId>cn.zack.blogs</groupId>
             <artifactId>securitty</artifactId>
         </dependency>
+        <dependency>
+            <groupId>cn.zack.blogs</groupId>
+            <artifactId>handler</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
     </dependencies>
 
 </project>

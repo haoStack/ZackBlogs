@@ -17,6 +17,7 @@
         <module>entity</module>
         <module>config</module>
         <module>securitty</module>
+        <module>handler</module>
     </modules>
 
     <properties>

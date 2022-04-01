@@ -1,5 +1,6 @@
 package cn.rmonkey.web.controller;
 
+import cn.rmonkey.entity.ResponseResult;
 import cn.rmonkey.entity.UserEntity;
 import cn.rmonkey.service.LoginService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,11 +19,11 @@ public class LoginController {
     @Autowired
     private LoginService loginService;
     @PostMapping("/user/login")
-    public void login(@RequestBody UserEntity userEntity) {
+    public ResponseResult login(@RequestBody UserEntity userEntity) {
        //登录
         System.out.println("hello");
         System.out.println(userEntity);
-        loginService.login(userEntity);
+        return loginService.login(userEntity);
 
     }
     @RequestMapping("/user/logout")

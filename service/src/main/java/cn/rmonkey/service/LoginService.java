@@ -1,5 +1,6 @@
 package cn.rmonkey.service;
 
+import cn.rmonkey.entity.ResponseResult;
 import cn.rmonkey.entity.UserEntity;
 
 /**
@@ -9,7 +10,7 @@ import cn.rmonkey.entity.UserEntity;
  */
 public interface LoginService {
 
-    void login(UserEntity userEntity);
+    ResponseResult login(UserEntity userEntity);
 
-    void logout();
+    ResponseResult logout();
 }

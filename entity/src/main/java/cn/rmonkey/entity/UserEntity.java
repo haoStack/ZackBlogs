@@ -24,7 +24,7 @@ import java.util.List;
 @NoArgsConstructor
 public class UserEntity extends BaseEntity {
     //用户openid
-    @NotNull
+
     private Long openid;
 
     //用户昵称

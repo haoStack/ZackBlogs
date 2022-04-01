@@ -1,7 +1,8 @@
-package cn.rmonkey.service;
+package cn.rmonkey.service.impl;
 
 import cn.rmonkey.entity.UserEntity;
 import cn.rmonkey.mapper.UserMapper;
+import cn.rmonkey.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -13,7 +14,7 @@ import java.util.List;
  * @date 2022/3/31 23:25
  */
 @Service
-public class UserServiceImpl implements UserService{
+public class UserServiceImpl implements UserService {
     @Autowired
     UserMapper userMapper;
     @Override

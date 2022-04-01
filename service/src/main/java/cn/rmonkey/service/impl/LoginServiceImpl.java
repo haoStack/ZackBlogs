@@ -5,8 +5,8 @@ import cn.rmonkey.entity.ResponseResult;
 import cn.rmonkey.entity.UserEntity;
 import cn.rmonkey.service.LoginService;
 import cn.rmonkey.utils.JwtUtil;
-import cn.rmonkey.utils.RedisCache;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
@@ -27,7 +27,7 @@ public class LoginServiceImpl implements LoginService {
     @Autowired
     private AuthenticationManager authenticationManager;
     @Autowired
-    private RedisCache redisCache;
+    private RedisTemplate redisTemplate;
     @Override
     public ResponseResult login(UserEntity user) {
         //AuthenticationManager authenticate进行用户认证
@@ -44,7 +44,7 @@ public class LoginServiceImpl implements LoginService {
         Map<String,String> map = new HashMap<>();
         map.put("token",jwt);
         //把完整的用户信息存入redis  userid作为key
-        redisCache.setCacheObject("login:"+userid,loginUser);
+        redisTemplate.opsForValue().set("login:"+userid,loginUser);
         return new ResponseResult(200,"登录成功",map);
     }
 
@@ -55,7 +55,7 @@ public class LoginServiceImpl implements LoginService {
         LoginUser loginUser = (LoginUser) authentication.getPrincipal();
         Long userid = loginUser.getUserEntity().getId();
         //删除redis中的值
-        redisCache.deleteObject("login:"+userid);
+        redisTemplate.delete("login:"+userid);
         return new ResponseResult(200,"注销成功");
     }
 }

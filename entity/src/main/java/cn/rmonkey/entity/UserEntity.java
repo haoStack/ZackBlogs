@@ -52,4 +52,7 @@ public class UserEntity extends BaseEntity {
     @TableField(exist = false)
     private List<ArticleEntity> viewHistory;
 
+    //用户拥有的角色
+    @TableField(exist = false)
+    private List<String> roleList;
 }

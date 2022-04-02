@@ -42,7 +42,7 @@ public class UserEntity extends BaseEntity {
     private Date registerTime;
 
     //用户状态(0:取消关注，1:在关注）也可理解成用户注销
-    private Integer status;
+    private Boolean status;
 
     //用户收藏
     @TableField(exist = false)
